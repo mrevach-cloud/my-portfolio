@@ -786,8 +786,7 @@
   toggle.addEventListener('click', () => {
     setTheme(!document.documentElement.classList.contains('light'));
   });
-</script>
- // Scroll reveal Intersection Observer engine
+  // Scroll reveal Intersection Observer engine
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(el => {
       if (el.isIntersecting) {
@@ -797,5 +796,6 @@
     });
   }, { threshold: 0.08 });
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
 </body>
 </html>
