@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Matan Revach — Technical Support Specialist</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
+<title>Matan Revach — Open to Opportunities</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230d0f0e'/><text x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='Inter,sans-serif' font-size='14' font-weight='600' fill='%234ade80'>MR</text></svg>">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -404,6 +404,68 @@
     .cta-row { flex-direction: column; }
     .btn { justify-content: center; }
   }
+ .reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.55s ease, transform 0.55s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+  }
+ 
+  /* PDF VIEWER BLOCK CARD */
+  .pdf-card {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--surface);
+  }
+  .pdf-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 16px;
+    border-bottom: 1px solid var(--border);
+    background: var(--bg);
+  }
+  .pdf-card-header-left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--muted);
+  }
+  .pdf-card-header-left svg { width: 13px; height: 13px; }
+  .pdf-download-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 10px;
+    font-family: 'JetBrains Mono', monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    text-decoration: none;
+  }
+  .pdf-download-link:hover { text-decoration: underline; }
+  .pdf-download-link svg { width: 11px; height: 11px; }
+  .pdf-placeholder {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: var(--muted);
+    font-size: 13px;
+  }
+  .pdf-note {
+    margin-top: 10px;
+    font-size: 12px;
+    color: var(--muted);
+  }
 </style>
 </head>
 <body>
@@ -452,6 +514,10 @@
       <a href="Matan_Revach_CV.pdf" target="_blank" rel="noreferrer" class="btn btn-secondary">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 15V3"/><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/></svg>
         Download CV
+      </a>
+     <a href="#contact" class="btn btn-secondary">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        Contact
       </a>
     </div>
   </header>
@@ -604,7 +670,29 @@
       <p class="edu-sub">John Bryce QA Graduate</p>
     </div>
   </section>
-
+ 
+<!-- CV DOCUMENT EMBED -->
+  <section class="reveal">
+    <h2 class="section-label mono label">CV Document</h2>
+    <div class="pdf-card">
+      <div class="pdf-card-header">
+        <div class="pdf-card-header-left">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"/><path d="M14 2v5a1 1 0 0 0 1 1h5"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>
+          <span class="mono label">Matan_Revach_CV.pdf</span>
+        </div>
+        <a href="Matan_Revach_CV.pdf" download class="pdf-download-link">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 15V3"/><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/></svg>
+          Download
+        </a>
+      </div>
+      <div class="pdf-placeholder">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" style="width:20px;height:20px;"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"/></svg>
+        Document Linked Successfully
+      </div>
+    </div>
+    <p class="pdf-note">Trouble viewing? <a href="Matan_Revach_CV.pdf" target="_blank" rel="noreferrer" style="color:var(--accent);">Open the PDF in a new tab</a>.</p>
+  </section>
+ 
   <!-- MILITARY -->
   <section>
     <h2 class="section-label mono label">Military Service</h2>
@@ -699,5 +787,15 @@
     setTheme(!document.documentElement.classList.contains('light'));
   });
 </script>
+ // Scroll reveal Intersection Observer engine
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(el => {
+      if (el.isIntersecting) {
+        el.target.classList.add('visible');
+        observer.unobserve(el.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 </body>
 </html>
