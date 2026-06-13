@@ -452,14 +452,11 @@
   }
   .pdf-download-link:hover { text-decoration: underline; }
   .pdf-download-link svg { width: 11px; height: 11px; }
-  .pdf-placeholder {
-    height: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    color: var(--muted);
-    font-size: 13px;
+  .pdf-container {
+    width: 100%;
+    height: 600px; /* Gives the PDF enough vertical space to read */
+    border: none;
+    background: var(--surface);
   }
   .pdf-note {
     margin-top: 10px;
@@ -685,10 +682,13 @@
           Download
         </a>
       </div>
-      <div class="pdf-placeholder">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" style="width:20px;height:20px;"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"/></svg>
-        Document Linked Successfully
-      </div>
+      <object data="Matan_Revach_CV.pdf" type="application/pdf" class="pdf-container">
+        <!-- Fallback if the browser or mobile device blocks embedded PDFs -->
+        <div class="pdf-placeholder" style="height: 120px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;">
+          <p>PDF preview is not supported by your browser.</p>
+          <a href="Matan_Revach_CV.pdf" target="_blank" rel="noreferrer" class="btn btn-secondary">Open PDF in New Tab</a>
+        </div>
+      </object>
     </div>
     <p class="pdf-note">Trouble viewing? <a href="Matan_Revach_CV.pdf" target="_blank" rel="noreferrer" style="color:var(--accent);">Open the PDF in a new tab</a>.</p>
   </section>
