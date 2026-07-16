@@ -764,7 +764,7 @@
   </section>
 
   <footer>
-    <p class="mono label muted-text">© 2026 Matan Revach</p>
+    <p class="mono label muted-text">© <span id="current-year"></span> Matan Revach</p>
   </footer>
 
 </main>
@@ -808,6 +808,7 @@
     });
   }, { threshold: 0.08 });
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+ document.getElementById("current-year").textContent = new Date().getFullYear();
 </script>
 </body>
 </html>
